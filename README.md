@@ -69,6 +69,28 @@ import { PUBLIC_REGION } from '$env/static/public'
     },
 ```
 
+### Using Svelte component variables in CSS
+
+You can use the var() function in CSS to use your Svelte variables in `style` section.
+For example in the style section you can have:
+```css
+background-image: var(--background-image);
+```
+In the HTML template you can set the CSS variable (see the style attribute):
+
+```html
+<section
+    class={"hero is-link " + `${heroClasses}`}
+    style="--background-image: url({backgroundImage});"
+    use:storyblokEditable={blok}
+>
+```
+And in the script section, you can set the `backgroundImage` variable:
+```js
+let backgroundImage = blok.background_image.filename;
+```
+For a complete example take a look at the `Hero.svelte` component.
+
 ## Tools/Services used
 
 - [Storyblok SvelteKit Tech Hub](https://www.storyblok.com/tc/sveltekit)
