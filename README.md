@@ -5,7 +5,7 @@ This is an example project for starting to use SvelteKit and Storyblok (Headless
 ## Highlights
 I try to keep track of the notes I collected while I'm building this example project.
 
-#### Enabling HTTPS
+### Enabling HTTPS
 With Storyblok to allow the Visual Editor to embed the front-end you are building via iFrame, you have to enable HTTPS.
 Because SvelteKit uses by default Vite you can use the [vitejs/plugin-basic-ssl](https://github.com/vitejs/vite-plugin-basic-ssl) plugin:
 
@@ -38,7 +38,6 @@ In the `storyblok.js` file, where in this project example I initialize the Stroy
 ```
 import { PUBLIC_ACCESS_TOKEN } from '$env/static/public'
 ```
-
 
 ### Svelte Preprocess
 If you are using extra tools like PostCSS, or Typescript and you want to help Svelte to parse correctly the syntax of another language than HTML, CSS, and plain JS, you should use [Svelte Preprocess](https://github.com/sveltejs/svelte-preprocess).
