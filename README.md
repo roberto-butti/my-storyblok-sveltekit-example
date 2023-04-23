@@ -26,6 +26,14 @@ export default defineConfig({
 });
 ```
 
+### Installing components
+If you are starting from scratch with a new space, you can import some already-created components via the [Storyblok CLI](https://github.com/storyblok/storyblok-cli). You can find the component definition in the `components.json` file in the root directory of this repository.
+To import the components, use the `storyblok` command with `push-components` option.
+```
+storyblok push-components --space YOUR_SPACE_ID components.json
+```
+Where `YOUR_SPACE_ID` is the identifier for your space target of the import process.
+
 ### Svelte Preprocess
 If you are using extra tools like PostCSS, or Typescript and you want to help Svelte to parse correctly the syntax of another language than HTML, CSS, and plain JS, you should use [Svelte Preprocess](https://github.com/sveltejs/svelte-preprocess).
 Because the Storyblok Svelte SDK uses Typescript you should configure the Svelte Preprocess.
