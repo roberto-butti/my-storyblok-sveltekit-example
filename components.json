@@ -1,0 +1,251 @@
+{
+  "components": [
+    {
+      "name": "all-articles",
+      "display_name": null,
+      "created_at": "2022-09-13T06:11:50.626Z",
+      "updated_at": "2022-09-16T10:43:28.308Z",
+      "id": 2899397,
+      "schema": {
+        "title": {
+          "type": "text",
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "all-articles",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": "block-text-img-r-l"
+    },
+    {
+      "name": "article",
+      "display_name": null,
+      "created_at": "2022-09-13T06:11:50.581Z",
+      "updated_at": "2022-11-04T14:58:13.481Z",
+      "id": 2899395,
+      "schema": {
+        "image": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ],
+          "pos": 0,
+          "translatable": true
+        },
+        "title": {
+          "type": "text",
+          "pos": 1,
+          "translatable": true
+        },
+        "subtitle": {
+          "type": "text",
+          "pos": 2
+        },
+        "teaser": {
+          "type": "textarea",
+          "pos": 3
+        },
+        "content": {
+          "type": "richtext",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "article",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "feature",
+      "display_name": null,
+      "created_at": "2022-09-13T06:11:50.709Z",
+      "updated_at": "2022-09-13T06:11:50.709Z",
+      "id": 2899401,
+      "schema": {
+        "name": {
+          "type": "text"
+        },
+        "image": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "feature",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "grid",
+      "display_name": null,
+      "created_at": "2022-09-13T06:11:50.688Z",
+      "updated_at": "2022-09-13T06:11:50.688Z",
+      "id": 2899400,
+      "schema": {
+        "columns": {
+          "type": "bloks"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "grid",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "hero",
+      "display_name": null,
+      "created_at": "2022-09-13T06:11:50.731Z",
+      "updated_at": "2022-09-13T12:44:24.780Z",
+      "id": 2899402,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "translatable": false
+        },
+        "subheadline": {
+          "type": "text"
+        },
+        "background_image": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ]
+        },
+        "layout": {
+          "type": "option",
+          "options": [
+            {
+              "name": "Constrained",
+              "value": "constrained"
+            },
+            {
+              "value": "full-width",
+              "name": "Full Width"
+            }
+          ],
+          "default_value": "constrained"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hero",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "page",
+      "display_name": null,
+      "created_at": "2022-09-13T06:11:50.647Z",
+      "updated_at": "2022-09-13T06:11:50.647Z",
+      "id": 2899398,
+      "schema": {
+        "body": {
+          "type": "bloks"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "page",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "popular-articles",
+      "display_name": null,
+      "created_at": "2022-09-13T06:11:50.606Z",
+      "updated_at": "2022-09-13T06:11:50.606Z",
+      "id": 2899396,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0
+        },
+        "articles": {
+          "type": "options",
+          "display_name": "Popular Articles",
+          "source": "internal_stories",
+          "folder_slug": "blog/",
+          "max_options": "3",
+          "filter_content_type": "article",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "popular-articles",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "teaser",
+      "display_name": null,
+      "created_at": "2022-09-13T06:11:50.668Z",
+      "updated_at": "2022-09-13T06:11:50.668Z",
+      "id": 2899399,
+      "schema": {
+        "headline": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "teaser",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    }
+  ]
+}
