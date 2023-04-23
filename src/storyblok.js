@@ -4,7 +4,7 @@ import Page from "./components/Page.svelte";
 import Teaser from "./components/Teaser.svelte";
 import { apiPlugin, storyblokInit } from "@storyblok/svelte";
 import { PUBLIC_ACCESS_TOKEN } from '$env/static/public'
-
+import { PUBLIC_REGION } from '$env/static/public'
 
 export function useStoryblok() {
     storyblokInit({
@@ -18,6 +18,7 @@ export function useStoryblok() {
         },
         apiOptions: {
             https: true,
+            region: PUBLIC_REGION // "us" if your space is in US region
         },
 
     });
