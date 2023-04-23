@@ -2,6 +2,7 @@ import Feature from "./components/Feature.svelte";
 import Grid from "./components/Grid.svelte";
 import Page from "./components/Page.svelte";
 import Teaser from "./components/Teaser.svelte";
+import Hero from "./components/Hero.svelte";
 import { apiPlugin, storyblokInit } from "@storyblok/svelte";
 import { PUBLIC_ACCESS_TOKEN } from '$env/static/public'
 import { PUBLIC_REGION } from '$env/static/public'
@@ -15,6 +16,7 @@ export function useStoryblok() {
             grid: Grid,
             page: Page,
             teaser: Teaser,
+            hero: Hero
         },
         apiOptions: {
             https: true,
