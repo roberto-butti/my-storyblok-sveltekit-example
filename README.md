@@ -52,7 +52,7 @@ My suggestion is to store the Access token in the `.env` file (you can see an ex
 PUBLIC_ACCESS_TOKEN=youraccesstoken
 ```
 
-In the `storyblok.js` file, where in this project example I initialize the Stroyblok object, I can access the environment variables via:
+In the `storyblok.js` file, where in this project example I initialize the Storyblok object, I can access the environment variables via:
 
 ```
 import { PUBLIC_ACCESS_TOKEN } from '$env/static/public'
