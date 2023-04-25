@@ -14,7 +14,10 @@ onMount(() => {
     if (data.story) {
         useStoryblokBridge(
             data.story.id,
-            (newStory) => (data.story = newStory)
+            (newStory) => (data.story = newStory),
+            {
+                resolveRelations: ["popular-articles.articles"],
+            }
         );
     }
 });

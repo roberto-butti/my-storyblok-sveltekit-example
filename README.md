@@ -119,6 +119,35 @@ For executing the prettier command you can launch:
 npx prettier --write './src/**/*.{svelte,js}'
 ```
 
+### Resolving relation
+For resolving the relation (retrieving content from related stories) in the home page with the `popular-articles` component, for the `articles` field, you have to set the resolve relations parameter. You have to set up the resolve relations in two places: when you retrieve the content via API and when you set up the Storyblok bridge.
+If you are not resolving the relation, the `articles` field in the `popular-articles` component will be just an identifier (the story uuid), instead, if you resolve correctly the relation, the `articles` field will include the data from the related articles (the article JSON).
+In the `+page.js` file, you have to set up the `resolve_relations` option in `get()` method:
+
+```javascript
+    let storyblokApi = await useStoryblokApi();
+    const resolveRelations = ["popular-articles.articles"];
+    const dataStory = await storyblokApi.get("cdn/stories/home", {
+        version: "draft",
+        resolve_relations: resolveRelations,
+    });
+```
+In the `+page.svelte` file you have to set up the Storyblok bridge with the `resolveRelations` option:
+
+```javascript
+onMount(() => {
+    if (data.story) {
+        useStoryblokBridge(
+            data.story.id,
+            (newStory) => (data.story = newStory),
+            {
+                resolveRelations: ["popular-articles.articles"],
+            }
+        );
+    }
+});
+```
+
 ## Tools/Services used
 
 - [Storyblok SvelteKit Tech Hub](https://www.storyblok.com/tc/sveltekit)
