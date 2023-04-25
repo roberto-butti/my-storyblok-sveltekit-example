@@ -1,6 +1,11 @@
+<img
+  src="https://repository-images.githubusercontent.com/631179948/d5d216fe-3f18-45ea-9060-b57e31cea942"
+  alt="This is a sample project for getting started with SvelteKit and Storyblok (headless CMS)."
+  title="My Storyblok SvelteKit Example"
+  style="display: inline-block; margin: 0 auto;">
 # My Storyblok SvelteKit Example
 
-This is an example project for starting to use SvelteKit and Storyblok (Headless CMS).
+This is a sample project for getting started with SvelteKit and Storyblok (headless CMS).
 
 ## Highlights
 I try to keep track of the notes I collected while I'm building this example project.
