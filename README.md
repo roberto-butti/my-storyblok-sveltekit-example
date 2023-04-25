@@ -91,6 +91,16 @@ let backgroundImage = blok.background_image.filename;
 ```
 For a complete example take a look at the `Hero.svelte` component.
 
+### Preloading Page
+If you are using a link via `a href` in your Svelte component you can control the behavior for preloading or avoiding preload of the linked page.
+The `data-sveltekit-preload-data` attribute in the parent tag of the `a` tag, you can activate the preloading (the linked page is preloaded when you go hover with your mouse, so when you will click the link the loading will be faster) or avoid preloading with `data-sveltekit-preload-data="off"`
+
+```
+<div
+    class="card"
+    use:storyblokEditable={article}
+    data-sveltekit-preload-data >
+```
 ## Tools/Services used
 
 - [Storyblok SvelteKit Tech Hub](https://www.storyblok.com/tc/sveltekit)

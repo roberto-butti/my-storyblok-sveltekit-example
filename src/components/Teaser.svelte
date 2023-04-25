@@ -7,7 +7,10 @@
     export let blok;
 </script>
 
-<section class="hero has-text-light has-background-link" use:storyblokEditable={blok}>
+<section
+    class="hero has-text-light has-background-link"
+    use:storyblokEditable={blok}
+>
     <div class="hero-body">
         <p class="title">
             {blok.headline}

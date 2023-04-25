@@ -6,6 +6,9 @@ import Hero from "./components/Hero.svelte";
 import { apiPlugin, storyblokInit } from "@storyblok/svelte";
 import { PUBLIC_ACCESS_TOKEN } from '$env/static/public'
 import { PUBLIC_REGION } from '$env/static/public'
+import TeaserImage from "./components/TeaserImage.svelte";
+import PopularArticles from "./components/PopularArticles.svelte";
+import Article from "./components/Article.svelte";
 
 export function useStoryblok() {
     storyblokInit({
@@ -16,7 +19,10 @@ export function useStoryblok() {
             grid: Grid,
             page: Page,
             teaser: Teaser,
-            hero: Hero
+            hero: Hero,
+            teaser_image: TeaserImage,
+            'popular-articles': PopularArticles,
+            article: Article
         },
         apiOptions: {
             https: true,
