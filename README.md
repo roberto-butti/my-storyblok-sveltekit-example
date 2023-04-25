@@ -96,12 +96,29 @@ If you are using a link via `a href` in your Svelte component you can control th
 The `data-sveltekit-preload-data` attribute in the parent tag of the `a` tag, you can activate the preloading (the linked page is preloaded when you go hover with your mouse, so when you will click the link the loading will be faster) or avoid preloading with `data-sveltekit-preload-data="off"`.
 If you want to learn more you can jump on the official documentation of [Svelte, Link options](https://kit.svelte.dev/docs/link-options#data-sveltekit-preload-data)
 In the `ArticleCard.svelte` component, I used `data-sveltekit-preload-data` for preloading the article page.
-```
+
+```html
 <div
     class="card"
     use:storyblokEditable={article}
     data-sveltekit-preload-data >
 ```
+
+### Formatting `js` and `svelte` files
+For consistency, I'm using prettier and prettier-plugin-svelte
+
+For installing prettier and the svelte plugin:
+```sh
+npm i --save-dev prettier-plugin-svelte prettier
+```
+Then I created a `.prettierrc` file with the directives for formatting `js` and `svelte` files.
+You can find the `.prettierrc` in the root of the current repository.
+For executing the prettier command you can launch:
+
+```sh
+npx prettier --write './src/**/*.{svelte,js}'
+```
+
 ## Tools/Services used
 
 - [Storyblok SvelteKit Tech Hub](https://www.storyblok.com/tc/sveltekit)

@@ -1,23 +1,10 @@
-<script>
-    import { storyblokEditable } from "@storyblok/svelte";
-    /**
-     * @type {any}
-     */
-    export let article;
-    /**
-     * @type {any}
-     */
-    export let slug;
-</script>
-
-<div class="card" use:storyblokEditable={article}
-data-sveltekit-preload-data>
+<div class="card" use:storyblokEditable="{article}" data-sveltekit-preload-data>
     {#if article.image.filename}
         <div class="card-image">
             <figure class="image is-4by3">
                 <img
                     src="{article.image.filename}/m/600x0"
-                    alt={article.image.alt}
+                    alt="{article.image.alt}"
                 />
             </figure>
         </div>
@@ -32,10 +19,22 @@ data-sveltekit-preload-data>
         </p>
     </div>
     <footer class="card-footer">
-    <p class="card-footer-item">
-      <span>
-        Read the <em>'<a href="/{slug}">{article.title}</a>'</em> article
-      </span>
-    </p>
-  </footer>
+        <p class="card-footer-item">
+            <span>
+                Read the <em>'<a href="/{slug}">{article.title}</a>'</em> article
+            </span>
+        </p>
+    </footer>
 </div>
+
+<script>
+import { storyblokEditable } from "@storyblok/svelte";
+/**
+ * @type {any}
+ */
+export let article;
+/**
+ * @type {any}
+ */
+export let slug;
+</script>

@@ -1,18 +1,8 @@
-<script>
-    import { storyblokEditable, renderRichText } from "@storyblok/svelte";
-
-    /**
-     * @type {any}
-     */
-    export let blok;
-    $: resolvedRichText = renderRichText(blok.content);
-</script>
-
-<div use:storyblokEditable={blok}>
+<div use:storyblokEditable="{blok}">
     {#if blok.image.filename}
         <img
-            src={blok.image.filename + "/m/1600x0"}
-            alt={blok.image.alt}
+            src="{blok.image.filename + '/m/1600x0'}"
+            alt="{blok.image.alt}"
             class="w-full h-[360px] lg:h-[450px] object-cover"
         />
     {/if}
@@ -26,3 +16,13 @@
         <div class="prose">{@html resolvedRichText}</div>
     </div>
 </div>
+
+<script>
+import { storyblokEditable, renderRichText } from "@storyblok/svelte";
+
+/**
+ * @type {any}
+ */
+export let blok;
+$: resolvedRichText = renderRichText(blok.content);
+</script>
