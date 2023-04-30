@@ -33,7 +33,7 @@
                                     </div>
                                 </div>
                                 <div class="content article-body">
-                                    {#each data.story.content.content.content as node, i}
+                                    {#each data.story.content.richtext_field.content as node, i}
                                         {#if node.type === "blok"}
                                             {#each node.attrs.body as bodyItem, idxBody}
                                                 <StoryblokComponent
@@ -72,7 +72,7 @@ function renderNode(node) {
         content: [node],
     });
 }
-$: articleHTML = renderRichText(data.story.content.content);
+$: articleHTML = renderRichText(data.story.content.richtext_field);
 
 onMount(() => {
     if (data.story) {
