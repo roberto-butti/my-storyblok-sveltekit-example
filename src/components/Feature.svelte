@@ -2,7 +2,10 @@
     {#if blok.image}
         <div class="card-image">
             <figure class="image is-4by3">
-                <img src="{blok.image.filename}" alt="{blok.image.alt}" />
+                <img
+                    src="{blok.image.filename}/m/1024x0"
+                    alt="{blok.image.alt}"
+                />
             </figure>
         </div>
     {/if}
