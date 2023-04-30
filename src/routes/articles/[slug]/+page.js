@@ -9,7 +9,6 @@ export async function load({ params }) {
     let storyblokApi = await useStoryblokApi();
     let slug = params.slug;
     //const resolveRelations = ['popular-articles.articles']
-    console.log(slug);
     const dataStory = await storyblokApi.get("cdn/stories/articles/" + slug, {
         version: "draft",
         //resolve_relations: resolveRelations
