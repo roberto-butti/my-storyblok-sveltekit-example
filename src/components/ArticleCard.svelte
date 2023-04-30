@@ -3,7 +3,7 @@
         <div class="card-image">
             <figure class="image is-4by3">
                 <img
-                    src="{article.image.filename}/m/600x0"
+                    src="{article.image.filename}/m/600x450"
                     alt="{article.image.alt}"
                 />
             </figure>
