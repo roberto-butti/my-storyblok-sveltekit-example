@@ -3,9 +3,9 @@
     {
       "name": "all-articles",
       "display_name": null,
-      "created_at": "2022-09-13T06:11:50.626Z",
-      "updated_at": "2022-09-16T10:43:28.308Z",
-      "id": 2899397,
+      "created_at": "2023-04-23T19:44:25.507Z",
+      "updated_at": "2023-04-23T19:44:25.507Z",
+      "id": 3866504,
       "schema": {
         "title": {
           "type": "text",
@@ -27,9 +27,9 @@
     {
       "name": "article",
       "display_name": null,
-      "created_at": "2022-09-13T06:11:50.581Z",
-      "updated_at": "2022-11-04T14:58:13.481Z",
-      "id": 2899395,
+      "created_at": "2023-04-23T19:44:25.629Z",
+      "updated_at": "2023-04-30T19:23:07.963Z",
+      "id": 3866505,
       "schema": {
         "image": {
           "type": "asset",
@@ -37,24 +37,29 @@
             "images"
           ],
           "pos": 0,
-          "translatable": true
+          "translatable": true,
+          "key": "image"
         },
         "title": {
           "type": "text",
           "pos": 1,
-          "translatable": true
+          "translatable": true,
+          "key": "title"
         },
         "subtitle": {
           "type": "text",
-          "pos": 2
+          "pos": 2,
+          "key": "subtitle"
         },
         "teaser": {
           "type": "textarea",
-          "pos": 3
+          "pos": 3,
+          "key": "teaser"
         },
-        "content": {
+        "richtext_field": {
           "type": "richtext",
-          "pos": 4
+          "pos": 4,
+          "key": "content"
         }
       },
       "image": null,
@@ -72,9 +77,9 @@
     {
       "name": "feature",
       "display_name": null,
-      "created_at": "2022-09-13T06:11:50.709Z",
-      "updated_at": "2022-09-13T06:11:50.709Z",
-      "id": 2899401,
+      "created_at": "2023-04-22T07:21:23.910Z",
+      "updated_at": "2023-04-23T19:44:25.847Z",
+      "id": 3861118,
       "schema": {
         "name": {
           "type": "text"
@@ -101,9 +106,9 @@
     {
       "name": "grid",
       "display_name": null,
-      "created_at": "2022-09-13T06:11:50.688Z",
-      "updated_at": "2022-09-13T06:11:50.688Z",
-      "id": 2899400,
+      "created_at": "2023-04-22T07:21:23.888Z",
+      "updated_at": "2023-04-23T19:44:26.057Z",
+      "id": 3861117,
       "schema": {
         "columns": {
           "type": "bloks"
@@ -124,9 +129,9 @@
     {
       "name": "hero",
       "display_name": null,
-      "created_at": "2022-09-13T06:11:50.731Z",
-      "updated_at": "2022-09-13T12:44:24.780Z",
-      "id": 2899402,
+      "created_at": "2023-04-23T19:44:26.163Z",
+      "updated_at": "2023-04-23T19:44:26.163Z",
+      "id": 3866506,
       "schema": {
         "headline": {
           "type": "text",
@@ -171,9 +176,9 @@
     {
       "name": "page",
       "display_name": null,
-      "created_at": "2022-09-13T06:11:50.647Z",
-      "updated_at": "2022-09-13T06:11:50.647Z",
-      "id": 2899398,
+      "created_at": "2023-04-22T07:21:23.826Z",
+      "updated_at": "2023-04-23T19:44:26.379Z",
+      "id": 3861115,
       "schema": {
         "body": {
           "type": "bloks"
@@ -194,9 +199,9 @@
     {
       "name": "popular-articles",
       "display_name": null,
-      "created_at": "2022-09-13T06:11:50.606Z",
-      "updated_at": "2022-09-13T06:11:50.606Z",
-      "id": 2899396,
+      "created_at": "2023-04-23T19:44:26.509Z",
+      "updated_at": "2023-04-24T21:46:18.090Z",
+      "id": 3866507,
       "schema": {
         "headline": {
           "type": "text",
@@ -206,7 +211,7 @@
           "type": "options",
           "display_name": "Popular Articles",
           "source": "internal_stories",
-          "folder_slug": "blog/",
+          "folder_slug": "articles/",
           "max_options": "3",
           "filter_content_type": "article",
           "pos": 1
@@ -227,12 +232,18 @@
     {
       "name": "teaser",
       "display_name": null,
-      "created_at": "2022-09-13T06:11:50.668Z",
-      "updated_at": "2022-09-13T06:11:50.668Z",
-      "id": 2899399,
+      "created_at": "2023-04-22T07:21:23.853Z",
+      "updated_at": "2023-04-24T21:04:20.483Z",
+      "id": 3861116,
       "schema": {
         "headline": {
           "type": "text"
+        },
+        "image": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ]
         }
       },
       "image": null,
