@@ -159,22 +159,17 @@ The content is saved in JSON format, so if you want to render it into HTML you h
 The Javascript Stroyblok SDK, provides the `renderRichText` function for example:
 ```javascript
 test('code_block to generate a pre and code tag', () => {
-	const doc = {
-		type: 'doc',
-		content: [
-			{
-				type: 'code_block',
-				content: [
-					{
-						text: 'code',
-						type: 'text',
-					},
-				],
-			},
-		],
-	}
-
-	expect(resolver.render(doc)).toBe('<pre><code>code</code></pre>')
+  const doc = {
+    type: 'doc',
+      content: [ {
+        type: 'code_block',
+        content: [ {
+          text: 'code',
+          type: 'text',
+        } ],
+      }, ],
+  }
+  expect(resolver.render(doc)).toBe('<pre><code>code</code></pre>')
 })
 ```
 In this sample project, there is a content-type `article` with a field named `richtext_field`. The type of the `richtext_field` is `Richtext`.
