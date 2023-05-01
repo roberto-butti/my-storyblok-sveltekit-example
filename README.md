@@ -153,6 +153,74 @@ onMount(() => {
 });
 ```
 
+### Rendering the RichText field
+The RichText widget relies on the [TipTap](https://tiptap.dev/) editor. The TipTap editor is based on a Schema that defines how your content is structured and is stored in Storyblok.
+The content is saved in JSON format, so if you want to render it into HTML you have to transform the JSON into HTML.
+The Javascript Stroyblok SDK, provides the `renderRichText` function for example:
+```javascript
+test('code_block to generate a pre and code tag', () => {
+	const doc = {
+		type: 'doc',
+		content: [
+			{
+				type: 'code_block',
+				content: [
+					{
+						text: 'code',
+						type: 'text',
+					},
+				],
+			},
+		],
+	}
+
+	expect(resolver.render(doc)).toBe('<pre><code>code</code></pre>')
+})
+```
+In this sample project, there is a content-type `article` with a field named `richtext_field`. The type of the `richtext_field` is `Richtext`.
+If you take a look at `src/routes/articles/[slug]/+page.svelte` file you see that `rendderRichText` is used.
+```
+$: articleHTML = renderRichText(data.story.content.richtext_field);
+```
+Typically in the Svelte component file, in the template part for using `articleHTML` variables you have to use the `@html` directive (to avoid the Svelte parse applying some escaping and sanitization to the HTML):
+```
+{@html articleHTML}
+```
+
+### Rendering Components embedded into the RichText field
+The RichText field is very flexible because you can apply inline style and paragraph style. You can also embed the Storyblok component into the RichText field. For example, if you have a Hero component in the Block Library, you can include the component in the RichText editor.
+If you need to render correctly the components included in a RichText field, you can loop across the sections of the RichText field, if the section is a standard one, you can render it in the usual way with the `renderRichText` function.
+If the section is a component (like `Hero`, `Feature`, `Banner` etc) you can render it as a `StoryblokComponent` using the Svelte component shipped by Storyblok SDK. Under the hood, `StoryblokComponent` uses the `<svelte:component />`.
+
+
+For looping the sections in the RichText field:
+```
+{#each data.story.content.richtext_field.content as node, i}
+    {#if node.type === "blok"}
+        {#each node.attrs.body as bodyItem, idxBody}
+            <StoryblokComponent
+                blok="{bodyItem}"
+            />
+        {/each}
+    {:else}
+        {@html renderNode(node)}
+    {/if}
+{/each}
+```
+The render function is:
+```
+function renderNode(node) {
+    return renderRichText({
+        type: "doc",
+        content: [node],
+    });
+}
+```
+If you are curious you can take a look at `src/routes/articles/[slug]/+page.svelte` file.
+
+> The solution above it works fine, but honestly I'm still testing it with some edge cases. So feel free to provide any feedback on the solution above. Once I will complete the tests I will open a PR to Storyblok Svelte SDK for automatically rendering the components in the RichText field.
+
+
 ## Tools/Services used
 
 - [Storyblok SvelteKit Tech Hub](https://www.storyblok.com/tc/sveltekit)
