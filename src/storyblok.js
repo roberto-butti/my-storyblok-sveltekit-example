@@ -1,20 +1,21 @@
 // @ts-nocheck
-import Feature from "./components/Feature.svelte";
-import Grid from "./components/Grid.svelte";
-import Page from "./components/Page.svelte";
-import Teaser from "./components/Teaser.svelte";
-import Hero from "./components/Hero.svelte";
+import Feature from "$lib/../components/Feature.svelte";
+import Grid from "$lib/../components/Grid.svelte";
+import Page from "$lib/../components/Page.svelte";
+import Teaser from "$lib/../components/Teaser.svelte";
+import Hero from "$lib/../components/Hero.svelte";
 import { apiPlugin, storyblokInit } from "@storyblok/svelte";
 import { PUBLIC_ACCESS_TOKEN } from "$env/static/public";
 import { PUBLIC_REGION } from "$env/static/public";
-import TeaserImage from "./components/TeaserImage.svelte";
-import PopularArticles from "./components/PopularArticles.svelte";
-import Article from "./components/Article.svelte";
-import HeaderMenu from "./components/HeaderMenu.svelte";
+import TeaserImage from "$lib/../components/TeaserImage.svelte";
+import PopularArticles from "$lib/../components/PopularArticles.svelte";
+import Article from "$lib/../components/Article.svelte";
+import HeaderMenu from "$lib/../components/HeaderMenu.svelte";
 
-export function useStoryblok() {
+export function useStoryblok(accessToken = "") {
+    accessToken = accessToken === "" ? PUBLIC_ACCESS_TOKEN : accessToken;
     storyblokInit({
-        accessToken: PUBLIC_ACCESS_TOKEN,
+        accessToken: accessToken,
         use: [apiPlugin],
         components: {
             feature: Feature,
