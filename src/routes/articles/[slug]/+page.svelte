@@ -82,6 +82,7 @@ onMount(() => {
             (newStory) => (data.story = newStory),
             {
                 resolveRelations: resolveRelations,
+                preventClicks: true,
             }
         );
     }
