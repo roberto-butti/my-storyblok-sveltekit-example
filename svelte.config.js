@@ -1,4 +1,4 @@
-import preprocess from "svelte-preprocess";
+import sveltePreprocess from "svelte-preprocess";
 import adapter from '@sveltejs/adapter-auto';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -10,9 +10,7 @@ const config = {
 		adapter: adapter()
 	},
 	preprocess: [
-		preprocess({
-
-		}),
+		sveltePreprocess({}),
 	],
 };
 
