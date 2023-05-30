@@ -2,7 +2,7 @@
     <title>{data.story.name}</title>
 </svelte:head>
 {#key data}
-    <div>
+    <div use:storyblokEditable="{data.story.content}">
         {#if data.story}
             <section class="hero is-info is-medium is-bold">
                 <div class="hero-body">
@@ -59,7 +59,11 @@
 <script>
 import { onMount } from "svelte";
 import { renderRichText } from "@storyblok/svelte";
-import { useStoryblokBridge, StoryblokComponent } from "@storyblok/svelte";
+import {
+    storyblokEditable,
+    useStoryblokBridge,
+    StoryblokComponent,
+} from "@storyblok/svelte";
 
 export let data;
 
@@ -76,14 +80,11 @@ $: articleHTML = renderRichText(data.story.content.richtext_field);
 
 onMount(() => {
     if (data.story) {
-        const resolveRelations = ["popular-articles.articles"];
+        //const resolveRelations = ["popular-articles.articles"];
         useStoryblokBridge(
             data.story.id,
             (newStory) => (data.story = newStory),
-            {
-                resolveRelations: resolveRelations,
-                preventClicks: true,
-            }
+            {}
         );
     }
 });

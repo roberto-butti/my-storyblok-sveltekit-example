@@ -1,16 +1,16 @@
 import { useStoryblokApi } from "@storyblok/svelte";
 import { useStoryblok } from "../../storyblok";
+export const csr = false;
 
 export async function load() {
-    useStoryblok();
+    await useStoryblok();
     let storyblokApi = await useStoryblokApi();
     const resolveRelations = ["popular-articles.articles"];
-    const dataStory = await storyblokApi.get("cdn/stories/serverside", {
+    const siteConfig = await storyblokApi.get("cdn/stories/site-config", {
         version: "draft",
         resolve_relations: resolveRelations,
     });
-
     return {
-        serverstory: dataStory.data.story,
+        siteConfig: siteConfig.data.story,
     };
 }

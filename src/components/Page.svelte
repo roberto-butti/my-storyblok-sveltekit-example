@@ -1,6 +1,8 @@
 <div use:storyblokEditable="{blok}" class="container">
     {#each blok.body as item}
-        <StoryblokComponent blok="{item}" />
+        <div use:storyblokEditable="{item}">
+            <StoryblokComponent blok="{item}" />
+        </div>
     {/each}
 </div>
 

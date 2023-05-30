@@ -1,5 +1,4 @@
 <div class="py-24">
-    {@debug blok}
     <h2 class="text-6xl text-[#50b0ae] font-bold text-center mb-12">
         {blok.title}
     </h2>
