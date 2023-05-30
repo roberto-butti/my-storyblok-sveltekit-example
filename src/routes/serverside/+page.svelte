@@ -1,6 +1,6 @@
 <div>
-    {#if data.story}
-        <StoryblokComponent blok="{data.story.content}" />
+    {#if data.serverstory}
+        <StoryblokComponent blok="{data.serverstory.content}" />
     {/if}
 </div>
 
@@ -11,13 +11,12 @@ import { useStoryblokBridge, StoryblokComponent } from "@storyblok/svelte";
 export let data;
 
 onMount(() => {
-    if (data.story) {
+    if (data.serverstory) {
         useStoryblokBridge(
-            data.story.id,
-            (newStory) => (data.story = newStory),
+            data.serverstory.id,
+            (newStory) => (data.serverstory = newStory),
             {
                 resolveRelations: ["popular-articles.articles"],
-                preventClicks: true,
             }
         );
     }
