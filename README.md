@@ -215,6 +215,19 @@ If you are curious you can take a look at `src/routes/articles/[slug]/+page.svel
 
 > The solution above it works fine, but honestly I'm still testing it with some edge cases. So feel free to provide any feedback on the solution above. Once I will complete the tests I will open a PR to Storyblok Svelte SDK for automatically rendering the components in the RichText field.
 
+### Server Side
+
+If you want to execute the logic on the server side, you can use `+page.server.js` way from SvelteKit: https://kit.svelte.dev/docs/routing#page-page-server-js
+In this examples we are going to create a route `/serverside/` with a pure server-side implementation.
+
+In this case, if you need to load the Storyblok configuration in 2 places: the layout and the page (in the layout you are loading the site-config story for retrieving the global header menu, in the page you are loading the story for rendering the page content) you can centralize the storyblokInit configuration in the stroyblok.js file in `useStoryblok()` function.
+and then call for example `useStoryblok()` in the SvelteKit `load()` function of [`+layout.server.js`](src/routes/serverside/+layout.server.js) and [`+page.server.js`](src/routes/serverside/+page.server.js).
+In this example, because we are loading the data from the server side we are going to disable the client-side rendering. In the [`+layout.server.js`](src/routes/serverside/+layout.server.js) file you can set :
+```
+export const csr = false;
+```
+
+
 
 ## Tools/Services used
 
