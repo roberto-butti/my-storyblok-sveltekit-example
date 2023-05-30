@@ -40,7 +40,6 @@ export function useStoryblok() {
  * @param {{ linktype: string; url: any; cached_url: string }} linkBlok
  */
 export function getHref(linkBlok) {
-    console.log(linkBlok);
     if (linkBlok.linktype === "url") {
         return linkBlok.url;
     }

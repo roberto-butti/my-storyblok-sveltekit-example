@@ -17,7 +17,6 @@ export async function load() {
     return storyblokApi
         .get("cdn/stories/home", {
             version: "draft",
-            cv: "",
             resolve_relations: resolveRelations,
         })
         .then((dataStory) => {
