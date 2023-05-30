@@ -20,7 +20,7 @@ import { storyblokEditable } from "@storyblok/svelte";
  */
 export let blok;
 let heroClasses = blok.layout === "constrained" ? "is-medium" : "is-large";
-let backgroundImage = blok.background_image.filename + '/m/2048x0/';
+let backgroundImage = blok.background_image.filename + "/m/2048x0/";
 </script>
 
 <style>

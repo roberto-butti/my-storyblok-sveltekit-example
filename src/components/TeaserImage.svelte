@@ -38,7 +38,6 @@ function partOfDay() {
  */
 export let blok;
 let heroClasses = blok.layout === "constrained" ? "is-medium" : "is-large";
-console.log(blok.images);
 
 let screenSize = 1024;
 

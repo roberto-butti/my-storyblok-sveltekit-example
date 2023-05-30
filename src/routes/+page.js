@@ -8,12 +8,30 @@ export async function load() {
 
     let storyblokApi = await useStoryblokApi();
     const resolveRelations = ["popular-articles.articles"];
-    const dataStory = await storyblokApi.get("cdn/stories/home", {
+
+    const siteConfig = await storyblokApi.get("cdn/stories/site-config", {
         version: "draft",
-        resolve_relations: resolveRelations,
+        resolve_links: "url",
     });
 
-    return {
-        story: dataStory.data.story,
-    };
+    return storyblokApi
+        .get("cdn/stories/home", {
+            version: "draft",
+            cv: "",
+            resolve_relations: resolveRelations,
+        })
+        .then((dataStory) => {
+            return {
+                story: dataStory.data.story,
+                siteConfig: siteConfig.data.story,
+                error: false,
+            };
+        })
+        .catch((error) => {
+            return {
+                story: {},
+                siteConfig: siteConfig.data.story,
+                error: error,
+            };
+        });
 }
