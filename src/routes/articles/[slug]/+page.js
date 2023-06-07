@@ -4,7 +4,7 @@ import { useStoryblok } from "../../../storyblok";
 
 /** @type {import('../$types').PageLoad} */
 export async function load({ params }) {
-    useStoryblok();
+    await useStoryblok();
 
     let storyblokApi = await useStoryblokApi();
     let slug = params.slug;
