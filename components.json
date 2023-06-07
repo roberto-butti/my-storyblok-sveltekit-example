@@ -75,10 +75,43 @@
       "icon": null
     },
     {
+      "name": "config",
+      "display_name": null,
+      "created_at": "2023-05-06T17:08:35.977Z",
+      "updated_at": "2023-06-07T20:49:41.166Z",
+      "id": 3934858,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0
+        },
+        "header_menu": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "menu_link"
+          ],
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "config",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
       "name": "feature",
       "display_name": null,
       "created_at": "2023-04-22T07:21:23.910Z",
-      "updated_at": "2023-04-23T19:44:25.847Z",
+      "updated_at": "2023-05-16T06:08:19.454Z",
       "id": 3861118,
       "schema": {
         "name": {
@@ -89,6 +122,9 @@
           "filetypes": [
             "images"
           ]
+        },
+        "cta": {
+          "type": "multilink"
         }
       },
       "image": null,
@@ -174,14 +210,45 @@
       "icon": null
     },
     {
+      "name": "menu_link",
+      "display_name": null,
+      "created_at": "2023-05-06T17:08:36.169Z",
+      "updated_at": "2023-05-06T17:08:36.169Z",
+      "id": 3934859,
+      "schema": {
+        "name": {
+          "type": "text"
+        },
+        "link": {
+          "type": "multilink"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "menu_link",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
       "name": "page",
       "display_name": null,
       "created_at": "2023-04-22T07:21:23.826Z",
-      "updated_at": "2023-04-23T19:44:26.379Z",
+      "updated_at": "2023-05-16T06:48:35.120Z",
       "id": 3861115,
       "schema": {
+        "pagecta": {
+          "type": "multilink",
+          "pos": 0
+        },
         "body": {
-          "type": "bloks"
+          "type": "bloks",
+          "pos": 1
         }
       },
       "image": null,
