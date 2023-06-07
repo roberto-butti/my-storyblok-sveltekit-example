@@ -1,32 +1,29 @@
 // @ts-nocheck
-import Feature from "$lib/../components/Feature.svelte";
-import Grid from "$lib/../components/Grid.svelte";
-import Page from "$lib/../components/Page.svelte";
-import Teaser from "$lib/../components/Teaser.svelte";
-import Hero from "$lib/../components/Hero.svelte";
+
 import { apiPlugin, storyblokInit } from "@storyblok/svelte";
 import { PUBLIC_ACCESS_TOKEN } from "$env/static/public";
 import { PUBLIC_REGION } from "$env/static/public";
-import TeaserImage from "$lib/../components/TeaserImage.svelte";
-import PopularArticles from "$lib/../components/PopularArticles.svelte";
-import Article from "$lib/../components/Article.svelte";
-import HeaderMenu from "$lib/../components/HeaderMenu.svelte";
 
-export function useStoryblok(accessToken = "") {
+export async function useStoryblok(accessToken = "") {
     accessToken = accessToken === "" ? PUBLIC_ACCESS_TOKEN : accessToken;
     storyblokInit({
         accessToken: accessToken,
         use: [apiPlugin],
         components: {
-            feature: Feature,
-            grid: Grid,
-            page: Page,
-            teaser: Teaser,
-            hero: Hero,
-            teaser_image: TeaserImage,
-            "popular-articles": PopularArticles,
-            article: Article,
-            header_menu: HeaderMenu,
+            feature: (await import("$lib/../components/Feature.svelte"))
+                .default,
+            grid: (await import("$lib/../components/Grid.svelte")).default,
+            page: (await import("$lib/../components/Page.svelte")).default,
+            teaser: (await import("$lib/../components/Teaser.svelte")).default,
+            hero: (await import("$lib/../components/Hero.svelte")).default,
+            teaser_image: (
+                await import("$lib/../components/TeaserImage.svelte")
+            ).default,
+            "popular-articles": (
+                await import("$lib/../components/PopularArticles.svelte")
+            ).default,
+            article: (await import("$lib/../components/Article.svelte"))
+                .default,
         },
         apiOptions: {
             https: true,

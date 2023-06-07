@@ -1,11 +1,13 @@
 <div>
-    {#if data.error}
-        ERROR {data.error.message}
-    {/if}
-    <HeaderMenu blok="{data.siteConfig.content.header_menu}" />
-    {#if data.story && data.story.content}
-        <StoryblokComponent blok="{data.story.content}" />
-    {/if}
+    {#key data}
+        {#if data.error}
+            ERROR {data.error.message}
+        {/if}
+        <HeaderMenu blok="{data.siteConfig.content.header_menu}" />
+        {#if data.story && data.story.content}
+            <StoryblokComponent blok="{data.story.content}" />
+        {/if}
+    {/key}
 </div>
 
 <script lang="ts">

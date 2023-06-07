@@ -4,7 +4,7 @@ import { useStoryblok } from "../../storyblok";
 
 /** @type {import('../$types').PageLoad} */
 export async function load() {
-    useStoryblok();
+    await useStoryblok();
 
     let storyblokApi = await useStoryblokApi();
     const dataStory = await storyblokApi.get("cdn/stories/site-config", {
