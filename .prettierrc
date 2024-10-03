@@ -1,8 +1,0 @@
-{
-    "tabWidth": 4,
-    "svelteSortOrder": "options-markup-scripts-styles",
-    "svelteStrictMode": true,
-    "bracketSameLine": false,
-    "svelteAllowShorthand": false,
-    "svelteIndentScriptAndStyle": false
-}

@@ -10,19 +10,21 @@ export async function useStoryblok(accessToken = "") {
         accessToken: accessToken,
         use: [apiPlugin],
         components: {
-            feature: (await import("$lib/../components/Feature.svelte"))
+            feature: (await import(`/src/components/Feature.svelte`))
                 .default,
-            grid: (await import("$lib/../components/Grid.svelte")).default,
-            page: (await import("$lib/../components/Page.svelte")).default,
-            teaser: (await import("$lib/../components/Teaser.svelte")).default,
-            hero: (await import("$lib/../components/Hero.svelte")).default,
+            grid: (await import("/src/components/Grid.svelte")).default,
+            page: (await import("/src/components/Page.svelte")).default,
+            teaser: (await import("/src/components/Teaser.svelte")).default,
+            hero: (await import("/src/components/Hero.svelte")).default,
             teaser_image: (
-                await import("$lib/../components/TeaserImage.svelte")
+                await import("/src/components/TeaserImage.svelte")
             ).default,
             "popular-articles": (
-                await import("$lib/../components/PopularArticles.svelte")
+                await import("/src/components/PopularArticles.svelte")
             ).default,
-            article: (await import("$lib/../components/Article.svelte"))
+            article: (await import("/src/components/Article.svelte"))
+                .default,
+            button: (await import(`/src/components/Button.svelte`))
                 .default,
         },
         apiOptions: {

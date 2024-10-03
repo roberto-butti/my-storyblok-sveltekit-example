@@ -15,7 +15,7 @@ With Storyblok to allow the Visual Editor to embed the front-end you are buildin
 Because SvelteKit uses by default Vite you can use the [vitejs/plugin-basic-ssl](https://github.com/vitejs/vite-plugin-basic-ssl) plugin:
 
 ```sh
-npm install @vitejs/plugin-basic-ssl
+bun add -d @vitejs/plugin-basic-ssl
 ```
 and in the `vite.config.js` you have to import the plugin:
 
@@ -114,14 +114,14 @@ For consistency, I'm using prettier and prettier-plugin-svelte
 
 For installing prettier and the svelte plugin:
 ```sh
-npm i --save-dev prettier-plugin-svelte prettier
+bun add -d prettier-plugin-svelte prettier
 ```
 Then I created a `.prettierrc` file with the directives for formatting `js` and `svelte` files.
 You can find the `.prettierrc` in the root of the current repository.
 For executing the prettier command you can launch:
 
 ```sh
-npx prettier --write './src/**/*.{svelte,js}'
+bunx prettier --write './src/**/*.{svelte,js}'
 ```
 
 ### Resolving relation
